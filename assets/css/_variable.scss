@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&family=Noto+Serif:wght@100..900&display=swap');
+
+$title-font: 'Noto Serif', sans-serif;
+$font: 'Noto Sans', sans-serif;
+
+$font-thin: 100;
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-600: 600;
+$font-700: 700;
+$font-800: 800;
+$font-900: 900;
+
+$primary-color: #de3335;
+$secondary-color: #069e76;
+$orange: #e96822;
+$light-orange: #ea6c1f;
+$white: #ffffff;
+$black: #000000;
+
+$header-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
+$background-gradient: linear-gradient(90deg, #e53032 30%, #eb701e 80%);
+
+
+@mixin wa-btn{
+    background-color: $secondary-color;
+    border-radius: 4px;
+    color: $white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: $font-medium;
+    font-family: $font;
+    border: 0;
+    transition: 0.3s all ease;
+
+    &:hover{
+        color: $white;
+        background-color: $orange;
+    }
+}
+
+@mixin form{
+    padding: 20px;
+    text-align: center;
+    h6{
+        font-size: 20px;
+        font-weight: $font-600;
+        color: $primary-color;
+    }
+
+    .form-control{
+        text-indent: 10%;
+        position: relative;
+        margin: 10px 0;
+        position: relative;
+        margin: 10px 0;
+        border-bottom: 2px solid $orange;
+        font-family: $title-font;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        border-radius: 0;
+
+        &:focus{
+            box-shadow: none;
+            border-bottom: 2px solid $secondary-color;
+        }
+    }
+
+    
+    i{
+        position: absolute;
+        top: 22px;
+        left: 26px;
+        color: rgba($primary-color, 0.6);
+    }
+
+    .wa-btn{
+        @include wa-btn;
+    }
+}
+
+@mixin intel-input{
+        width: 100%;
+    
+    .country-list{
+        max-width: 300px;
+        background-color: $white;
+        
+        li{
+            .country-name{
+                color: $black;
+            }
+        }
+    }
+
+    &.separate-dial-code{
+        .selected-dial-code{
+            padding-left: 10px;
+        }
+    }
+
+}
+
+@mixin title{
+    margin-bottom: 40px;
+    
+    h4{
+        font-size: 40px;
+        color: $black;
+        font-weight: $font-600;
+        font-family: $title-font;
+
+        span{
+            color: $primary-color;
+        }
+    }
+
+    h6{
+        font-size: 28px;
+        color: $primary-color;
+        font-weight: $font-700;
+        font-family: $title-font;
+    }
+}
+
+@mixin card {
+    text-align: center;
+    position: relative;
+    height: 300px;
+    border: 0;
+    cursor: pointer;
+
+    .card-wrapper{
+        position: absolute;
+        top: -10px;
+        left: 0;
+        height: 280px;
+        width: 100%;
+        padding: 20px 15px;
+        z-index: 1;
+        background-color: $white;
+        box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.1);
+        transition: .7s;
+
+        a{
+            background-color: $secondary-color;
+            color: $white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: all .3s;
+            text-align: center;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: $font-medium;
+            font-family: $font;
+            position: relative;
+
+            i{
+                font-size: 14px;
+            }
+
+            &:hover{
+                background-color: $orange;
+            }
+        }
+
+        .flower-img{
+            width: 118px;
+            position: absolute;
+            z-index: 0;
+            opacity: 0.3;
+        }
+    
+        .flower-1{
+            right: -7px;
+            bottom: 0;
+        }
+
+        
+        .image-wrapper{
+            margin: 10px auto 20px;
+            position: absolute;
+            top: -28px;
+            right: -14px;
+            z-index: 1;
+            border-radius: 100px;
+            background-color: $secondary-color;
+            box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.1);
+            height: 90px;
+            width: 90px;
+
+                
+            img{
+                width: 60px;
+                height: 60px;
+                margin-top: 16px;
+            }
+        }
+
+        .content{
+            position: relative;
+            z-index: 1;
+            max-width: 85%;
+            text-align: left;
+            margin-top: 30px;
+
+            &.card-body{
+                height: 250px;
+                text-align: left;
+                margin-top: 30px;
+            }
+
+            
+            h6{
+                font-family: $font;
+                font-weight: $font-600;
+                font-size: 20px;
+                color: $black;
+            }
+    
+            p{
+                font-family: $font;
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+    &::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba($primary-color, 0.9);
+        transform-origin: top;
+        z-index: 0;
+    }
+
+
+    &:hover{
+      .card-wrapper{
+        transform: translateY(-5px);
+      }
+    }
+
+    @media screen and (max-width: 990px) {
+        margin: 28px 0;
+    }
+}
